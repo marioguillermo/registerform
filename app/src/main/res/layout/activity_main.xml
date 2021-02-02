@@ -17,49 +17,96 @@
         android:textColor="@color/black"
         android:textSize="24sp" />
 
+    <TextView
+        android:id="@+id/tvName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="14dp"
+        android:layout_marginEnd="14dp"
+        android:fontFamily="@font/montserrat"
+        android:text="@string/label_name"
+        android:textColor="@color/black"
+        android:textSize="14sp" />
+
     <EditText
         android:id="@+id/etName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="14dp"
+        android:layout_marginStart="14dp"
+        android:layout_marginEnd="14dp"
         android:fontFamily="@font/montserrat"
-        android:maxLines="1"
-        android:inputType="textCapWords"
         android:imeOptions="actionNext"
-        android:hint="@string/label_name" />
+        android:inputType="textCapWords"
+        android:maxLines="1" />
+
+    <TextView
+        android:id="@+id/tvLastName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="14dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="14dp"
+        android:fontFamily="@font/montserrat"
+        android:text="@string/label_last_name"
+        android:textColor="@color/black"
+        android:textSize="14sp" />
 
     <EditText
         android:id="@+id/etLastName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="14dp"
-        android:maxLines="1"
-        android:inputType="textCapWords"
-        android:imeOptions="actionNext"
+        android:layout_marginStart="14dp"
+        android:layout_marginEnd="14dp"
         android:fontFamily="@font/montserrat"
-        android:hint="@string/label_last_name" />
+        android:imeOptions="actionNext"
+        android:inputType="textCapWords"
+        android:maxLines="1" />
+
+    <TextView
+        android:id="@+id/tvMail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="14dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="14dp"
+        android:fontFamily="@font/montserrat"
+        android:text="@string/label_mail"
+        android:textColor="@color/black"
+        android:textSize="14sp" />
 
     <EditText
         android:id="@+id/etMail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="14dp"
-        android:maxLines="1"
-        android:inputType="textEmailAddress"
+        android:layout_marginStart="14dp"
+        android:layout_marginEnd="14dp"
         android:fontFamily="@font/montserrat"
         android:imeOptions="actionNext"
-        android:hint="@string/label_mail" />
+        android:inputType="textEmailAddress"
+        android:maxLines="1" />
+
+    <TextView
+        android:id="@+id/tvPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="14dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="14dp"
+        android:fontFamily="@font/montserrat"
+        android:text="@string/label_password"
+        android:textColor="@color/black"
+        android:textSize="14sp" />
 
     <EditText
         android:id="@+id/etPassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="14dp"
-        android:maxLines="1"
-        android:inputType="textPassword"
-        android:imeOptions="actionDone"
+        android:layout_marginStart="14dp"
+        android:layout_marginEnd="14dp"
         android:fontFamily="@font/montserrat"
-        android:hint="@string/label_password" />
+        android:imeOptions="actionDone"
+        android:inputType="textPassword"
+        android:maxLines="1" />
 
     <Space
         android:layout_width="match_parent"
