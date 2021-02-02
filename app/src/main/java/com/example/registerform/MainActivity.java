@@ -20,8 +20,4 @@ public class MainActivity extends AppCompatActivity {
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
     }
-
-    private String getTrimmedText(EditText editText){
-         return editText.getText() == null ? "" : editText.getText().toString();
-    }
 }

@@ -2,11 +2,4 @@
 
     <string name="app_name">RegisterForm</string>
 
-    <string name="label_name">Nombre</string>
-    <string name="label_last_name">Apellido</string>
-    <string name="label_mail">Correo</string>
-    <string name="label_password">Contraseña</string>
-    <string name="label_sign_up">Registro</string>
-    <string name="label_action_sign_up">Registrar</string>
-
 </resources>
