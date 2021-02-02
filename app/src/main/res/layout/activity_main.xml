@@ -22,6 +22,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="14dp"
+        android:fontFamily="@font/montserrat"
+        android:maxLines="1"
+        android:inputType="textCapWords"
+        android:imeOptions="actionNext"
         android:hint="@string/label_name" />
 
     <EditText
@@ -29,6 +33,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="14dp"
+        android:maxLines="1"
+        android:inputType="textCapWords"
+        android:imeOptions="actionNext"
+        android:fontFamily="@font/montserrat"
         android:hint="@string/label_last_name" />
 
     <EditText
@@ -36,6 +44,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="14dp"
+        android:maxLines="1"
+        android:inputType="textEmailAddress"
+        android:fontFamily="@font/montserrat"
+        android:imeOptions="actionNext"
         android:hint="@string/label_mail" />
 
     <EditText
@@ -43,6 +55,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="14dp"
+        android:maxLines="1"
+        android:inputType="textPassword"
+        android:imeOptions="actionDone"
+        android:fontFamily="@font/montserrat"
         android:hint="@string/label_password" />
 
     <Space
@@ -55,5 +71,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="14dp"
+        android:fontFamily="@font/montserrat"
         android:text="@string/label_action_sign_up" />
+
 </LinearLayout>
