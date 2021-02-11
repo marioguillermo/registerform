@@ -9,4 +9,7 @@
     <string name="label_sign_up">Registro</string>
     <string name="label_action_sign_up">Registrar</string>
 
+    <string name="error_empty_field">El campo no puede esta vacio</string>
+    <string name="error_invalid_email">El correo electrónico no tiene un formato válido</string>
+    <string name="error_password_lenght">La contraseña debe ser de al menos 10 caracteres</string>
 </resources>
