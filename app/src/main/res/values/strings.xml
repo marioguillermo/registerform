@@ -13,6 +13,11 @@
     <string name="label_male">Masculino</string>
     <string name="label_female">Femenino</string>
     <string name="label_not_disclose">Prefiero no decirlo</string>
+    <string name="label_nationality">Nacionalidad:</string>
+    <string name="label_hint_country">País</string>
+    <string name="label_mexican">Mexicana</string>
+    <string name="label_foreign">Extranjera</string>
+
 
     <string name="error_empty_field">El campo no puede esta vacio</string>
     <string name="error_invalid_email">El correo electrónico no tiene un formato válido</string>

@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CompoundButton;
 import android.widget.EditText;
+import android.widget.RadioGroup;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -40,6 +41,16 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 binding.button.setEnabled(isChecked);
+            }
+        });
+        binding.rbgNationality.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                if(checkedId == R.id.rbForeign){
+                    binding.etNationality.setVisibility(View.VISIBLE);
+                } else {
+                    binding.etNationality.setVisibility(View.GONE);
+                }
             }
         });
     }

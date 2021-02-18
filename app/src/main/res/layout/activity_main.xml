@@ -136,12 +136,14 @@
         android:fontFamily="@font/montserrat"
         android:text="@string/label_birthday"
         android:textColor="@color/black"
+        android:visibility="gone"
         android:textSize="14sp" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="14dp"
+        android:visibility="gone"
         android:layout_marginEnd="14dp">
 
         <EditText
@@ -197,6 +199,7 @@
         android:fontFamily="@font/montserrat"
         android:text="@string/label_gender"
         android:textColor="@color/black"
+        android:visibility="gone"
         android:textSize="14sp" />
 
     <RadioGroup
@@ -206,6 +209,7 @@
         android:layout_marginStart="14dp"
         android:layout_marginEnd="14dp"
         android:gravity="center_vertical"
+        android:visibility="gone"
         android:checkedButton="@id/rbNotDisclosed"
         android:orientation="horizontal">
 
@@ -232,6 +236,60 @@
             android:layout_weight="1"
             android:text="@string/label_not_disclose" />
     </RadioGroup>
+
+
+    <TextView
+        android:id="@+id/tvNationality"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="14dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="14dp"
+        android:fontFamily="@font/montserrat"
+        android:text="@string/label_nationality"
+        android:textColor="@color/black"
+        android:textSize="14sp" />
+
+    <RadioGroup
+        android:id="@+id/rbgNationality"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="14dp"
+        android:layout_marginEnd="14dp"
+        android:gravity="center_vertical"
+        android:checkedButton="@id/rbNotDisclosed"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/rbMexican"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/label_mexican" />
+
+        <RadioButton
+            android:id="@+id/rbForeign"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_weight="1"
+            android:text="@string/label_foreign" />
+
+    </RadioGroup>
+
+    <EditText
+        android:id="@+id/etNationality"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="14dp"
+        android:layout_marginEnd="14dp"
+        android:hint="@string/label_hint_country"
+        android:fontFamily="@font/montserrat"
+        android:imeOptions="actionNext"
+        android:inputType="textCapWords"
+        android:visibility="gone"
+        android:maxLines="1" />
 
     <Space
         android:layout_width="match_parent"
