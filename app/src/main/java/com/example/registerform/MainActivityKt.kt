@@ -1,24 +1,54 @@
 package com.example.registerform
 
 import android.os.Bundle
+import android.text.method.PasswordTransformationMethod
 import android.util.Patterns
 import android.view.View
 import android.widget.EditText
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.registerform.databinding.ActivityMainKtBinding
 
 class MainActivityKt : AppCompatActivity() {
 
-    lateinit var binding: ActivityMainKtBinding
+    private lateinit var binding: ActivityMainKtBinding
+    private var isPasswordHidden = true
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainKtBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        binding.ivHidden.setImageResource(R.drawable.ic_baseline_visibility_24)
+        binding.ivHidden.setOnClickListener {
+            isPasswordHidden = !isPasswordHidden
+            if(isPasswordHidden){
+                binding.ivHidden.setImageResource(R.drawable.ic_baseline_visibility_off_24)
+                binding.etPassword.transformationMethod = PasswordTransformationMethod()
+            } else {
+                binding.ivHidden.setImageResource(R.drawable.ic_baseline_visibility_24)
+                binding.etPassword.transformationMethod = null
+            }
+        }
+
+        binding.cbTerms.setOnCheckedChangeListener { buttonView, isChecked ->
+            binding.button.isEnabled = isChecked
+        }
+
+//        val intent = Intent(this, MainActivity::class.java)
+//        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
+//        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK)
+//        intent.putExtra("KEY_VALUE", "VALUE")
+//        startActivity(intent)
+//        finish()
+
+        binding.rbgGender.setOnCheckedChangeListener { group, checkedId ->
+            if (checkedId == R.id.rbFemale) {
+                Toast.makeText(group.context, "Hello", Toast.LENGTH_SHORT).show()
+            }
+        }
+        val selection = binding.rbgGender.checkedRadioButtonId
+        binding.rbgGender.clearCheck()
+        binding.rbgGender.check(R.id.rbFemale)
     }
-
-
 
 
     fun runValidations(view: View) {

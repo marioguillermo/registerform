@@ -8,8 +8,18 @@
     <string name="label_password">Contraseña:</string>
     <string name="label_sign_up">Registro</string>
     <string name="label_action_sign_up">Registrar</string>
+    <string name="label_gender">Género:</string>
+    <string name="label_birthday">Fecha de nacimiento:</string>
+    <string name="label_male">Masculino</string>
+    <string name="label_female">Femenino</string>
+    <string name="label_not_disclose">Prefiero no decirlo</string>
 
     <string name="error_empty_field">El campo no puede esta vacio</string>
     <string name="error_invalid_email">El correo electrónico no tiene un formato válido</string>
     <string name="error_password_lenght">La contraseña debe ser de al menos 10 caracteres</string>
+    <string name="error_invalid_year">El año es inválido</string>
+    <string name="error_invalid_day">El dia es inválido</string>
+    <string name="error_invalid_month">El mes es inválido</string>
+    <string name="label_term">Acepto términos y condiciones</string>
+
 </resources>

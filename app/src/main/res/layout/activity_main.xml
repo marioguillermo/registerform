@@ -100,36 +100,151 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingStart="14dp"
-        android:paddingEnd="14dp"
+        android:layout_marginStart="14dp"
+        android:layout_marginEnd="14dp"
         android:orientation="horizontal">
 
         <EditText
             android:id="@+id/etPassword"
             android:layout_width="0dp"
-            android:layout_weight="1"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:fontFamily="@font/montserrat"
+            android:hint="@null"
             android:imeOptions="actionDone"
             android:inputType="textPassword"
-            android:hint="@null"
             android:maxLines="1" />
 
         <ImageView
             android:id="@+id/ivHidden"
             android:layout_width="48dp"
             android:layout_height="48dp"
-            android:padding="12dp"
-            android:background="?selectableItemBackgroundBorderless"
             android:layout_marginStart="8dp"
-            android:src="@drawable/ic_baseline_visibility_off_24"/>
+            android:background="?selectableItemBackgroundBorderless"
+            android:padding="12dp"
+            android:src="@drawable/ic_baseline_visibility_off_24" />
 
     </LinearLayout>
+
+    <TextView
+        android:id="@+id/tvBirthday"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="14dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="14dp"
+        android:fontFamily="@font/montserrat"
+        android:text="@string/label_birthday"
+        android:textColor="@color/black"
+        android:textSize="14sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="14dp"
+        android:layout_marginEnd="14dp">
+
+        <EditText
+            android:id="@+id/etDay"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/montserrat"
+            android:gravity="center"
+            android:hint="DD"
+            android:imeOptions="actionNext"
+            android:inputType="number"
+            android:maxLength="2"
+            android:maxLines="1" />
+
+        <EditText
+            android:id="@+id/etMonth"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_weight="1"
+            android:fontFamily="@font/montserrat"
+            android:gravity="center"
+            android:hint="MM"
+            android:imeOptions="actionNext"
+            android:inputType="number"
+            android:maxLength="2"
+            android:maxLines="1" />
+
+        <EditText
+            android:id="@+id/etYear"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:fontFamily="@font/montserrat"
+            android:gravity="center"
+            android:hint="YYYY"
+            android:imeOptions="actionDone"
+            android:inputType="number"
+            android:maxLength="4"
+            android:maxLines="1" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tvGender"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="14dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="14dp"
+        android:fontFamily="@font/montserrat"
+        android:text="@string/label_gender"
+        android:textColor="@color/black"
+        android:textSize="14sp" />
+
+    <RadioGroup
+        android:id="@+id/rbgGender"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="14dp"
+        android:layout_marginEnd="14dp"
+        android:gravity="center_vertical"
+        android:checkedButton="@id/rbNotDisclosed"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/rbMale"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/label_male" />
+
+        <RadioButton
+            android:id="@+id/rbFemale"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_weight="1"
+            android:text="@string/label_female" />
+
+        <RadioButton
+            android:id="@+id/rbNotDisclosed"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/label_not_disclose" />
+    </RadioGroup>
 
     <Space
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1" />
+
+    <CheckBox
+        android:id="@+id/cbTerms"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="14dp"
+        android:layout_marginEnd="14dp"
+        android:text="@string/label_term"/>
 
     <Button
         android:id="@+id/button"

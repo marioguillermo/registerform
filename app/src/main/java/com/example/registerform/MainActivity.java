@@ -5,6 +5,7 @@ import android.text.method.PasswordTransformationMethod;
 import android.util.Patterns;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -35,27 +36,25 @@ public class MainActivity extends AppCompatActivity {
                 binding.etPassword.setSelection(binding.etPassword.getText().length());
             }
         });
+        binding.cbTerms.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                binding.button.setEnabled(isChecked);
+            }
+        });
     }
 
 
     public void runValidations(View view) {
-        String name = binding.etName.getText().toString().trim();
-        String lastName = binding.etLastName.getText().toString().trim();
-        String mail = binding.etMail.getText().toString().trim();
-        String password = binding.etPassword.getText().toString().trim();
-
-        if (name.isEmpty()) {
-            binding.etName.setError(getString(R.string.error_empty_field));
-        }
-        if (lastName.isEmpty()) {
-            binding.etLastName.setError(getString(R.string.error_empty_field));
-        }
-        if (mail.isEmpty()) {
-            binding.etMail.setError(getString(R.string.error_empty_field));
-        }
-        if (password.isEmpty()) {
-            binding.etPassword.setError(getString(R.string.error_empty_field));
-        }
+        verifyForEmptyField(binding.etName);
+        verifyForEmptyField(binding.etLastName);
+        verifyForEmptyField(binding.etMail);
+        verifyForEmptyField(binding.etPassword);
+        verifyForEmptyField(binding.etDay);
+        verifyForEmptyField(binding.etMonth);
+        verifyForEmptyField(binding.etYear);
+        validateEmailAddressField();
+        validatePasswordLength();
     }
 
     private void runValidationAlternative() {
@@ -66,11 +65,6 @@ public class MainActivity extends AppCompatActivity {
                 verifyForEmptyField(view);
             }
         }
-
-//        verifyForEmptyField(binding.etName);
-//        verifyForEmptyField(binding.etLastName);
-//        verifyForEmptyField(binding.etMail);
-//        verifyForEmptyField(binding.etPassword);
     }
 
     private EditText getViewAsEditTextOrNull(View view) {
@@ -104,5 +98,4 @@ public class MainActivity extends AppCompatActivity {
             binding.etPassword.setError(getString(R.string.error_password_lenght));
         }
     }
-
 }
