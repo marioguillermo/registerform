@@ -11,7 +11,7 @@
         android:theme="@style/Theme.RegisterForm">
         <activity android:name=".ui.java.SuccessActivity" />
         <activity android:name=".ui.kotlin.SuccessActivityKt" />
-        <activity android:name=".ui.MainActivityKt">
+        <activity android:name=".ui.kotlin.MainActivityKt">
             <!-- Si estás haciendo kotlin mueve el intent filter aqui -->
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
