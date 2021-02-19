@@ -9,13 +9,19 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.RegisterForm">
-        <activity android:name=".MainActivityKt"></activity>
-        <activity android:name=".MainActivity">
+        <activity android:name=".ui.java.SuccessActivity" />
+        <activity android:name=".ui.kotlin.SuccessActivityKt" />
+        <activity android:name=".ui.MainActivityKt">
+            <!-- Si estás haciendo kotlin mueve el intent filter aqui -->
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity android:name=".ui.java.MainActivity">
+            <!-- Si estás haciendo java deja el intent filter aqui -->
+
         </activity>
     </application>
 

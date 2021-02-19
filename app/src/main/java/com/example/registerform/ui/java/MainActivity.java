@@ -1,28 +1,32 @@
-package com.example.registerform;
+package com.example.registerform.ui.java;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.method.PasswordTransformationMethod;
 import android.util.Patterns;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.CompoundButton;
 import android.widget.EditText;
-import android.widget.RadioGroup;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.registerform.R;
 import com.example.registerform.databinding.ActivityMainBinding;
+import com.example.registerform.domain.User;
 
 public class MainActivity extends AppCompatActivity {
 
     ActivityMainBinding binding;
     boolean isPasswordHidden = true;
 
+    public static final String USER_EXTRA = "USER_EXTRA";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+        binding.button.setOnClickListener(this::runValidations);
         binding.ivHidden.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -43,70 +47,58 @@ public class MainActivity extends AppCompatActivity {
                 binding.button.setEnabled(isChecked);
             }
         });
-        binding.rbgNationality.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup group, int checkedId) {
-                if(checkedId == R.id.rbForeign){
-                    binding.etNationality.setVisibility(View.VISIBLE);
-                } else {
-                    binding.etNationality.setVisibility(View.GONE);
-                }
-            }
-        });
     }
 
 
     public void runValidations(View view) {
-        verifyForEmptyField(binding.etName);
-        verifyForEmptyField(binding.etLastName);
-        verifyForEmptyField(binding.etMail);
-        verifyForEmptyField(binding.etPassword);
-        verifyForEmptyField(binding.etDay);
-        verifyForEmptyField(binding.etMonth);
-        verifyForEmptyField(binding.etYear);
-        validateEmailAddressField();
-        validatePasswordLength();
-    }
-
-    private void runValidationAlternative() {
-        ViewGroup viewGroup = binding.getRoot();
-        for (int i = 0; i < viewGroup.getChildCount(); i++) {
-            EditText view = getViewAsEditTextOrNull(viewGroup.getChildAt(i));
-            if (view != null) {
-                verifyForEmptyField(view);
-            }
+        boolean isEverythingOk = verifyForEmptyField(binding.etName)
+            && verifyForEmptyField(binding.etLastName)
+            && verifyForEmptyField(binding.etMail)
+            && verifyForEmptyField(binding.etPassword)
+            && validateEmailAddressField()
+            && validatePasswordLength();
+        if (isEverythingOk) {
+            Intent intent = new Intent(this, SuccessActivity.class);
+            User user = new User(
+                getTrimmedText(binding.etName),
+                getTrimmedText(binding.etLastName),
+                getTrimmedText(binding.etMail),
+                getTrimmedText(binding.etPassword),
+                "", ""
+            );
+            intent.putExtra(USER_EXTRA, user);
+            startActivity(intent);
+            finish();
         }
     }
 
-    private EditText getViewAsEditTextOrNull(View view) {
-        if (view instanceof EditText) {
-            return (EditText) view;
-        } else {
-            return null;
-        }
-    }
-
-    private void verifyForEmptyField(EditText editText) {
+    private boolean verifyForEmptyField(EditText editText) {
         String fieldContent = getTrimmedText(editText);
-        if (fieldContent.isEmpty()) {
+        boolean isValid = !fieldContent.isEmpty();
+        if (!isValid) {
             editText.setError(getString(R.string.error_empty_field));
         }
+        return isValid;
     }
 
     private String getTrimmedText(EditText editText) {
         return editText.getText().toString().trim();
     }
 
-    private void validateEmailAddressField() {
-        if (!Patterns.EMAIL_ADDRESS.matcher(getTrimmedText(binding.etMail)).matches()) {
+    private boolean validateEmailAddressField() {
+        boolean isValid = Patterns.EMAIL_ADDRESS.matcher(getTrimmedText(binding.etMail)).matches();
+        if (!isValid) {
             binding.etMail.setError(getString(R.string.error_invalid_email));
         }
+        return isValid;
     }
 
-    private void validatePasswordLength() {
+    private boolean validatePasswordLength() {
         String password = getTrimmedText(binding.etPassword);
-        if (password.length() < 10) {
+        boolean isValid = password.length() >= 10;
+        if (!isValid) {
             binding.etPassword.setError(getString(R.string.error_password_lenght));
         }
+        return isValid;
     }
 }
